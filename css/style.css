@@ -13,6 +13,27 @@ body {
     overflow-x: hidden;
 }
 
+.skip-link {
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+:focus-visible {
+    outline: 3px solid #00BFFF;
+    outline-offset: 2px;
+}
+
 /* Subtle particles background */
 .particles {
     position: fixed;
@@ -25,9 +46,9 @@ body {
 
 .particle {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.03);
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.959);
     border-radius: 50%;
     animation: float-particle 25s linear infinite;
 }
@@ -504,4 +525,51 @@ body {
         height: 150px;
         font-size: 60px;
     }
+}
+
+/* --- ESTILOS AJUSTADOS PARA LINKS E FOCO --- */
+
+/* 1. Altera o contorno de foco de azul para um cinza claro, mais neutro */
+:focus-visible {
+    outline: 3px solid #CCCCCC;
+    /* Trocado de azul para cinza claro */
+    outline-offset: 2px;
+    border-radius: 5px;
+    /* Opcional: deixa o contorno levemente arredondado */
+}
+
+/* 2. Estilo base dos links na seção de contato */
+.contact-item {
+    color: #b0b0b0;
+    /* Define a cor da fonte igual ao texto principal */
+    text-decoration: none;
+    /* Remove o sublinhado padrão */
+
+    /* (Mantenha todos os outros estilos que você já tem para .contact-item) */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(145deg, #181a1a, #0f1111);
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* 3. Estilo de interação (hover e foco) para os links de contato */
+.contact-item:hover,
+.contact-item:focus-visible {
+    /* Aplicamos o mesmo estilo para mouse e teclado */
+    color: #FFFFFF;
+    /* Deixa a fonte branca para maior destaque */
+    text-decoration: underline;
+    /* Adiciona um sublinhado para indicar que é clicável */
+
+    /* (Mantenha os outros estilos que você já tem para .contact-item:hover) */
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
